@@ -28,6 +28,7 @@ function getInversionCount(initialState) {
         inversionCount++
     }
   }
+
   return inversionCount
 }
 
@@ -53,8 +54,11 @@ function getBlankRowNumber(initialState) {
  * https://www.geeksforgeeks.org/check-instance-15-puzzle-solvable/
  * https://web.archive.org/web/20180617081657/https://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html
  */
-function isSolvable(puzzleWidth, inversionCount, blankInversedX) {
+function isSolvable(initialState) {
   let isSolvable = true
+  const puzzleWidth = initialState.length
+  const inversionCount = getInversionCount(initialState)
+  const blankInversedX = getBlankRowNumber(initialState)
 
   if (isEven(puzzleWidth)) {
     if (isEven(inversionCount)) {
@@ -71,11 +75,8 @@ function isSolvable(puzzleWidth, inversionCount, blankInversedX) {
 
 module.exports = function slidePuzzle(initialState) {
   const res = []
-  const puzzleWidth = initialState.length
-  const inversionCount = getInversionCount(initialState)
-  const blankInversedX = getBlankRowNumber(initialState)
 
-  if (!isSolvable(puzzleWidth, inversionCount, blankInversedX)) return null
+  if (!isSolvable(initialState)) return null
 
   return res
 }
