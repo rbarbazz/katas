@@ -1,0 +1,27 @@
+{
+  "name": "katas",
+  "version": "1.0.0",
+  "description": "Solutions to katas",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbarbazz/katas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbarbazz/katas/issues"
+  }
+}
